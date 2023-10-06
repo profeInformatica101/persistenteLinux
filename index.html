@@ -1,1 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Creando un USB Linux Persistente</title>
+    <style>
+        .logo {
+            background-image: url("https://i.ibb.co/mTG9cbw/logo-alixar.png");
+            border-radius: 50%;
+            width: 148px;
+            height: 148px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            margin: auto;
+            position: relative;
+            top: calc(50% + 50px); /* Ajusta la posición vertical según tu diseño */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-dark text-white p-4">
+        <div class="logo"></div>
+        <h1 class="text-center">🚀 Viaje hacia la Creación de un USB Linux Persistente 🚀</h1>
+    </header>
+<div class="container mt-4">
+    <h1 class="mb-4">Guía de Diagnóstico de Sistema</h1>
+    
+    <!-- Sección 1: Memoria Caché -->
+    <section id="cache-memory">
+        <h2 class="mb-3">1. Ver Memoria Caché</h2>
+        <!-- Desde Hiren's Boot -->
+        <div class="mb-3">
+            <h4>Desde Hiren's Boot:</h4>
+            <p>Utilizando herramientas como <b>CPU-Z</b> o <b>HWInfo</b> desde el Hiren's Boot.</p>
+        </div>
+        <!-- Desde Linux -->
+        <div>
+            <h4>Desde Linux:</h4>
+            <p>Utilizando el comando <code>lscpu</code>, el cual muestra información detallada sobre la CPU, incluyendo el tamaño de la caché.</p>
+        </div>
+    </section>
 
+       <!-- Sección 2: Memoria RAM -->
+       <section id="ram-memory">
+        <h2 class="mb-3">2. Ver Memoria RAM</h2>
+        <!-- 2.1. Total de Memoria y Slots Ocupados -->
+        <h3 class="mb-3">2.1. Total de Memoria y Slots Ocupados</h3>
+        <!-- Desde Hiren's Boot -->
+        <div class="mb-3">
+            <h4>Desde Hiren's Boot:</h4>
+            <p>Podrías usar herramientas como <b>CPU-Z</b> o <b>Speccy</b> para verificar la cantidad total de RAM y la distribución en los slots disponibles.</p>
+        </div>
+        <!-- Desde Linux -->
+        <div>
+            <h4>Desde Linux:</h4>
+            <p>Usar el comando <code>free -h</code> para ver la memoria total y utilizada, y <code>dmidecode --type 17</code> para ver información sobre los slots de memoria y su uso.</p>
+        </div>
+    </section>
+
+    <!-- Sección 3: Comprobación Tamaño Discos -->
+    <section id="disk-check">
+        <h2 class="mb-3">3. Comprobación Tamaño Discos</h2>
+        <!-- 3.1. Modelo de Disco -->
+        <h3 class="mb-3">3.1. Modelo de Disco</h3>
+        <!-- Desde Hiren's Boot -->
+        <div class="mb-3">
+            <h4>Desde Hiren's Boot:</h4>
+            <p>Utiliza la herramienta <b>CrystalDiskInfo</b> para obtener información detallada sobre los discos instalados.</p>
+        </div>
+        <!-- Desde UEFI BIOS -->
+        <div class="mb-3">
+            <h4>Desde UEFI BIOS:</h4>
+            <p>Navega por la configuración de la UEFI/BIOS para encontrar la información del disco. Generalmente se encuentra en una sección llamada "Advanced" o "SATA Configuration".</p>
+        </div>
+        <!-- 3.2. Tamaño del Disco -->
+        <h3 class="mb-3">3.2. Tamaño del Disco</h3>
+        <!-- Desde Linux -->
+        <div>
+            <h4>Desde Linux:</h4>
+            <p>Usa <code>lsblk</code> o <code>fdisk -l</code> para ver el tamaño de los discos y particiones.</p>
+        </div>
+    </section>
+
+    <!-- Puedes seguir añadiendo más secciones (como Sistema de Enfriamiento, Puertos y Conexiones, etc.) en el mismo formato. -->
+
+
+    <!-- Sección 4: Velocidad de Internet -->
+    <section id="internet-speed">
+        <h2 class="mb-3">4. Velocidad de Bajada de Internet</h2>
+        <!-- Desde Hiren's Boot -->
+        <div class="mb-3">
+            <h4>Desde Hiren's Boot:</h4>
+            <p>Puedes utilizar el navegador para acceder a sitios web como Fast.com o Speedtest.net y realizar una prueba de velocidad de internet.</p>
+        </div>
+        <!-- Desde Linux -->
+        <div>
+            <h4>Desde Linux:</h4>
+            <p>Podrías instalar y utilizar una herramienta desde la terminal como <b>speedtest-cli</b>. Para instalarlo, puedes usar:</p>
+            <pre class="p-2 bg-light">
+sudo apt-get install speedtest-cli
+            </pre>
+            <p>Y para usarlo simplemente escribe <code>speedtest</code> en la terminal.</p>
+        </div>
+    </section>
+
+
+<!-- Sección 5: Sistema de Enfriamiento -->
+<section id="cooling-system">
+    <h2 class="mb-3">5. Sistema de Enfriamiento</h2>
+    <!-- Desde Hiren's Boot -->
+    <div class="mb-3">
+        <h4>Desde Hiren's Boot:</h4>
+        <p>Utilizando HWInfo o Speccy, puedes revisar las temperaturas de varios componentes y la velocidad de los ventiladores.</p>
+    </div>
+    <!-- Desde Linux -->
+    <div>
+        <h4>Desde Linux:</h4>
+        <p>Utiliza el comando <code>sensors</code> para ver las temperaturas de la CPU y otro hardware. Si no está instalado, puedes añadirlo con <code>sudo apt-get install lm-sensors</code> y configurarlo con <code>sudo sensors-detect</code>.</p>
+    </div>
+</section>
+
+<!-- Sección 6: Puertos y Conexiones -->
+<section id="ports-connections">
+    <h2 class="mb-3">6. Puertos y Conexiones</h2>
+    <!-- Desde Hiren's Boot -->
+    <div class="mb-3">
+        <h4>Desde Hiren's Boot:</h4>
+        <p>Utilizando herramientas como Device Manager o HWInfo, puedes ver los puertos disponibles en la computadora y el estado de los dispositivos conectados a ellos.</p>
+    </div>
+    <!-- Desde Linux -->
+    <div>
+        <h4>Desde Linux:</h4>
+        <p>Usa <code>lsusb</code> para ver los dispositivos USB conectados y <code>lspci</code> para ver los dispositivos conectados a los puertos PCI.</p>
+    </div>
+</section>
+   <!-- Sección 7: Batería (específicamente para laptops) -->
+   <section id="battery">
+    <h2 class="mb-3">7. Batería</h2>
+    <!-- Desde Hiren's Boot -->
+    <div class="mb-3">
+        <h4>Desde Hiren's Boot:</h4>
+        <p>Con Hiren's Boot puedes utilizar HWInfo para obtener información sobre la batería de tu laptop, como su capacidad, nivel de carga y salud.</p>
+    </div>
+    <!-- Desde Linux -->
+    <div>
+        <h4>Desde Linux:</h4>
+        <p>Usa el comando <code>upower -i /org/freedesktop/UPower/devices/battery_BAT0</code> para obtener información sobre la batería, como su estado, porcentaje de carga y tiempo restante.</p>
+    </div>
+</section>
+
+<!-- Sección 8: Sonido -->
+<section id="sound">
+    <h2 class="mb-3">8. Sonido</h2>
+    <!-- Desde Hiren's Boot -->
+    <div class="mb-3">
+        <h4>Desde Hiren's Boot:</h4>
+        <p>Realtek HD Audio Manager o el Administrador de dispositivos de Windows (disponible en Hiren’s Boot) te permitirán ver y gestionar tus dispositivos de audio.</p>
+    </div>
+    <!-- Desde Linux -->
+    <div>
+        <h4>Desde Linux:</h4>
+        <p>Utiliza <code>aplay -l</code> para mostrar una lista de los dispositivos de sonido detectados. Para gestionar las configuraciones de audio puedes utilizar <code>alsamixer</code> o, si prefieres una herramienta GUI, puedes usar <code>pavucontrol</code>.</p>
+    </div>
+</section>
+
+<!-- Sección 9: Red -->
+<section id="network">
+    <h2 class="mb-3">9. Red</h2>
+    <!-- Desde Hiren's Boot -->
+    <div class="mb-3">
+        <h4>Desde Hiren's Boot:</h4>
+        <p>Puedes usar herramientas como SiSoftware Sandra o HWInfo para obtener información detallada sobre tus adaptadores de red y conexiones.</p>
+    </div>
+    <!-- Desde Linux -->
+    <div>
+        <h4>Desde Linux:</h4>
+        <p>Utiliza <code>ifconfig</code> o <code>ip a</code> para mostrar información sobre tus interfaces de red. <code>lshw -C network</code> proporcionará un resumen detallado de los adaptadores de red y su estado.</p>
+    </div>
+</section>
+
+
+    <!-- Sección 10: GPU -->
+    <section id="gpu">
+        <h2 class="mb-3">10. GPU</h2>
+        <!-- Desde Hiren's Boot -->
+        <div class="mb-3">
+            <h4>Desde Hiren's Boot:</h4>
+            <p>Puedes usar GPU-Z para obtener información detallada sobre la tarjeta gráfica, incluyendo el modelo, la memoria de video y las velocidades de reloj.</p>
+        </div>
+        <!-- Desde Linux -->
+        <div>
+            <h4>Desde Linux:</h4>
+            <p>Usa el comando <code>lspci | grep VGA</code> para obtener información básica sobre la GPU. Para más detalles, como la temperatura o la utilización, puedes usar <code>nvidia-smi</code> para las tarjetas Nvidia o las herramientas proporcionadas por tu driver específico.</p>
+        </div>
+    </section>
+
+    <!-- Sección 11: Entradas/Salidas -->
+    <section id="io">
+        <h2 class="mb-3">11. Entradas/Salidas</h2>
+        <!-- Desde Hiren's Boot -->
+        <div class="mb-3">
+            <h4>Desde Hiren's Boot:</h4>
+            <p>Utiliza Device Manager o HWInfo para obtener una lista de dispositivos de E/S, tales como teclados, ratones y otros periféricos conectados.</p>
+        </div>
+        <!-- Desde Linux -->
+        <div>
+            <h4>Desde Linux:</h4>
+            <p>Usa <code>lsusb</code> y <code>lspci</code> para obtener información sobre los dispositivos conectados al sistema a través de USB y PCI respectivamente.</p>
+        </div>
+    </section>
+
+    <!-- Sección 12: Sistema de Enfriamiento -->
+    <section id="cooling">
+        <h2 class="mb-3">12. Sistema de Enfriamiento</h2>
+        <!-- Desde Hiren's Boot -->
+        <div class="mb-3">
+            <h4>Desde Hiren's Boot:</h4>
+            <p>Utiliza HWInfo o SpeedFan para obtener lecturas de temperatura de componentes críticos y la velocidad de los ventiladores.</p>
+        </div>
+        <!-- Desde Linux -->
+        <div>
+            <h4>Desde Linux:</h4>
+            <p>Para obtener lecturas de temperatura, puedes usar <code>sensors</code> (necesitarás instalar <code>lm-sensors</code> si aún no está instalado). Para la velocidad del ventilador y otras lecturas, dependiendo de tu hardware, también podrías necesitar instalar e interactuar con herramientas específicas del fabricante.</p>
+        </div>
+    </section>
+       <!-- Sección 13: Almacenamiento -->
+       <section id="storage">
+        <h2 class="mb-3">13. Almacenamiento</h2>
+        <!-- Desde Hiren's Boot -->
+        <div class="mb-3">
+            <h4>Desde Hiren's Boot:</h4>
+            <p>Para obtener detalles acerca de los dispositivos de almacenamiento, puedes usar herramientas como CrystalDiskInfo o HDD Scan para obtener detalles sobre la salud, temperatura y capacidades de los discos duros.</p>
+        </div>
+        <!-- Desde Linux -->
+        <div>
+            <h4>Desde Linux:</h4>
+            <p>Utiliza comandos como <code>lsblk</code>, <code>fdisk -l</code> o <code>df -h</code> para explorar los dispositivos de almacenamiento, sus particiones y usos del espacio.</p>
+        </div>
+    </section>
+
+    <!-- Sección 14: Placa Base -->
+    <section id="motherboard">
+        <h2 class="mb-3">14. Placa Base</h2>
+        <!-- Desde Hiren's Boot -->
+        <div class="mb-3">
+            <h4>Desde Hiren's Boot:</h4>
+            <p>Puedes utilizar CPU-Z para obtener detalles acerca de la placa base, como el modelo, fabricante, y la versión del BIOS.</p>
+        </div>
+        <!-- Desde Linux -->
+        <div>
+            <h4>Desde Linux:</h4>
+            <p>El comando <code>dmidecode</code> es útil para extraer información sobre el hardware, incluyendo la placa base. Puedes usar <code>dmidecode -t baseboard</code> para obtener información específica sobre la placa base.</p>
+        </div>
+    </section>
+
+    <!-- Sección 15: Sonido -->
+    <section id="sound">
+        <h2 class="mb-3">15. Sonido</h2>
+        <!-- Desde Hiren's Boot -->
+        <div class="mb-3">
+            <h4>Desde Hiren's Boot:</h4>
+            <p>Utiliza herramientas integradas en Windows después de bootear con Hiren's Boot, tales como el Administrador de Dispositivos, para explorar las capacidades de sonido y verificar el hardware de audio.</p>
+        </div>
+        <!-- Desde Linux -->
+        <div>
+            <h4>Desde Linux:</h4>
+            <p>Utiliza <code>aplay -l</code> para listar los dispositivos de sonido y <code>alsamixer</code> para ajustar los niveles de sonido. Asegúrate de que los estudiantes comprendan cómo interactuar con la interfaz ALSA para ajustar los niveles de sonido y entender los dispositivos de entrada/salida.</p>
+        </div>
+    </section>
+
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
