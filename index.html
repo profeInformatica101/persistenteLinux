@@ -22,25 +22,42 @@
             transform: translateX(-50%);
         }
 
-          #usbimage {
-
+        #usbimage {
             border-radius: 50%;
             width: 75px;
             height: 75px;
             display: flex;
-
             backdrop-filter: blur(5px);
-            margin: auto;
-            position: fixed;
+            margin-right: 10px; /* Añade margen a la derecha para separar las imágenes del texto */
+        }
 
+        #linuxlogo {
+            border-radius: 50%;
+            width: 75px;
+            height: 75px;
+            display: flex;
+            backdrop-filter: blur(5px);
+            margin-right: 10px; /* Añade margen a la derecha para separar las imágenes del texto */
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
         }
     </style>
 </head>
 <body>
     <header class="bg-dark text-white p-4">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/USB_Flash.png" id="usbimage"></div>
-        <h1 class="text-center">🚀 Viaje hacia la Creación de un USB Linux Persistente 🚀</h1>
-  
+        <div class="header-content">
+
+            <div id="linuxlogo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Deus_Linux.png" alt="Linux">
+            </div>
+            <h1 class="text-center">🚀 Viaje hacia la Creación de un USB Linux Persistente 🚀</h1>
+            <div id="usbimage">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/USB_Drive.png" alt="USB">
+            </div>
+        </div>
         <div class="logo"></div>
     </header>
 <div class="container mt-4">
